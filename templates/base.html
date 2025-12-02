@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NovaBank{% endblock %}</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="rates" id="rates">USD 41.30 / 41.90 ₴  EUR 44.60 / 45.40 ₴</div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">NovaBank</div>
+                <nav>
+                    <a href="index.html">Головна</a>
+                    <a href="about.html">Про нас</a>
+                    <a href="services.html">Послуги</a>
+                    <a href="products.html">Продукти</a>
+                    <a href="cards.html">Картки</a>
+                    <a href="deposits.html">Депозити</a>
+                    <a href="credits.html">Кредити</a>
+                    <a href="contacts.html">Заявка</a>
+                    <a href="calculator.html">Калькулятор</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="container">
+            <p>© 2025 NovaBank — Найкращий банк України</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

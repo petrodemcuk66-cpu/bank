@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор — NovaBank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header><!-- той самий хедер --></header>
+
+    <section class="hero" style="height:60vh;background:#001f4d;">
+        <div class="hero-content">
+            <h1>Калькулятор кредиту</h1>
+        </div>
+    </section>
+
+    <div class="container" style="padding:100px 20px;max-width:800px;margin:0 auto;text-align:center;">
+        <div style="background:white;padding:50px;border-radius:25px;box-shadow:0 20px 50px rgba(0,0,0,0.2);">
+            <h2 style="color:#001f4d;margin-bottom:30px;">Розрахуйте свій платіж</h2>
+
+            <label>Сума кредиту (грн)</label>
+            <input type="range" id="amount" min="10000" max="1000000" value="200000" style="width:100%;margin:20px 0;">
+            <h3 id="sum">200 000 грн</h3>
+
+            <label>Термін (місяців)</label>
+            <select id="term" style="width:100%;padding:15px;margin:20px 0;border-radius:10px;font-size:1.2rem;">
+                <option>12</option><option>24</option><option>36</option><option selected>48</option><option>60</option>
+            </select>
+
+            <div style="margin:40px 0;font-size:2.5rem;color:#00ff88;font-weight:bold;">
+                Платіж на місяць:<br>
+                <span id="payment">5 832</span> грн
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const amount = document.getElementById('amount');
+        const sum = document.getElementById('sum');
+        const term = document.getElementById('term');
+        const payment = document.getElementById('payment');
+
+        function calc() {
+            let sumVal = Number(amount.value);
+            let months = Number(term.value);
+            let rate = 0.179; // 17.9% річних
+            let monthlyRate = rate / 12;
+            let pay = sumVal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -months));
+            sum.textContent = sumVal.toLocaleString() + " грн";
+            payment.textContent = Math.round(pay).toLocaleString();
+        }
+        amount.oninput = calc;
+        term.onchange = calc;
+        calc();
+    </script>
+</body>
+</html>

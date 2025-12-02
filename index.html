@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureTech Summit 2026 | IT-Конференція</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Future<span class="accent-color">Tech</span></div>
+        <nav>
+            <a href="#speakers">Спікери</a>
+            <a href="#schedule">Програма</a>
+            <a href="#tickets">Квитки</a>
+        </nav>
+        <button class="btn btn-primary" data-modal-target="registration">Реєстрація</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-date">10-12 Червня 2026 | Київ, Експоцентр</p>
+        <h1>FutureTech Summit <span class="accent-color">2026</span></h1>
+        <p class="lead">Головна IT-подія року. Три дні проривних ідей у сфері AI, Web3 та Cybersecurity.</p>
+        <button class="btn btn-primary btn-cta" data-modal-target="registration">Забронювати місце</button>
+    </section>
+
+    <!-- SPEAKERS -->
+    <section id="speakers">
+        <h2 class="section-title">Основні Спікери</h2>
+        <p class="section-subtitle">Провідні експерти з Google, DeepMind, Meta та Tesla поділяться своїми знаннями.</p>
+
+        <div class="speakers-grid">
+            {% for speaker in content.speakers %}
+            <div class="speaker-card">
+                <img src="{{ speaker.photo }}" alt="Фото {{ speaker.name }}" class="speaker-photo" loading="lazy">
+                <h3 class="speaker-name">{{ speaker.name }}</h3>
+                <p class="speaker-title">{{ speaker.title }}</p>
+                <p class="speaker-topic">{{ speaker.topic }}</p>
+                <a href="{{ speaker.linkedin }}" class="speaker-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SCHEDULE -->
+    <section id="schedule">
+        <h2 class="section-title">Детальна Програма</h2>
+        <p class="section-subtitle">Програма дня 1 (10 Червня)</p>
+        
+        <div class="schedule-list">
+            {% for speaker in content.speakers %}
+            <div class="schedule-item">
+                <div class="time-block">{{ speaker.time }}</div>
+                <div class="details">
+                    <p class="talk-title">{{ speaker.topic }}</p>
+                    <p class="talk-speaker">{{ speaker.name }}, {{ speaker.title }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="schedule-item break-time">
+                <div class="time-block">12:30</div>
+                <div class="details">
+                    <p class="talk-title">Обідня Перерва та Нетворкінг</p>
+                    <p class="talk-speaker">Головний хол</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- TICKETS -->
+    <section id="tickets">
+        <h2 class="section-title">Оберіть Свій Квиток</h2>
+        <p class="section-subtitle">Кількість VIP-квитків обмежена.</p>
+
+        <div class="tickets-grid">
+            {% for ticket in content.ticket_types %}
+            <div class="ticket-card">
+                <h3 class="ticket-name">{{ ticket.name }}</h3>
+                <p class="ticket-price">{{ ticket.price }}</p>
+                <ul class="ticket-features">
+                    {% for feature in ticket.features %}
+                    <li><i class="fas fa-check-circle"></i> {{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="btn btn-primary" data-modal-target="registration" data-ticket-id="{{ ticket.id }}">
+                    Придбати
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>FutureTech Summit 2026. Організатор: TechEvents UA.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+    </footer>
+
+    <!-- MODAL REGISTRATION -->
+    <div id="modal-registration" class="modal-overlay">
+        <div class="modal">
+            <span class="close-btn" data-modal-close>&times;</span>
+            <h2>Бронювання Місця</h2>
+            <form id="registrationForm">
+                <p id="selected-ticket-name" class="ticket-info">Обрано: Standard Pass</p>
+
+                <div class="input-group">
+                    <label for="regName">Ім'я та Прізвище</label>
+                    <input type="text" id="regName" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" name="email" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Зареєструватися</button>
+                <div class="loader" id="loader-reg"></div>
+                <div class="status-msg" id="status-reg"></div>
+            </form>
+        </div>
+    </div>
+
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
