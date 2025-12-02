@@ -47,7 +47,7 @@ function initReviewsCarousel() {
     if (!carousel) return;
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const cardWidth = carousel.querySelector('.review-card').offsetWidth + 20; // ширина картки + відступ
+    const cardWidth = carousel.querySelector('.review-card').offsetWidth + 20; 
     prevBtn.addEventListener('click', () => {
         carousel.scrollLeft -= cardWidth;
     });
