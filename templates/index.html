@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Bank | Цифровий Банк</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
     <header>
         <div class="logo">Nexus<span class="accent-color">Bank</span></div>
         <nav>
@@ -26,31 +22,26 @@
         </nav>
         <button class="btn btn-primary" data-modal-target="registration">Відкрити Рахунок</button>
     </header>
-
     <div class="video-background">
         <video autoplay loop muted playsinline id="heroVideo">
             <source src="{{ url_for('static', filename='media/hero-video.mp4.mp4') }}" type="video/mp4">
             Ваш браузер не підтримує тег video.
         </video>
     </div>
-
     <section class="hero">
         <p class="hero-date">ФІНАНСИ. ЗРУЧНО. НАДІЙНО.</p>
         <h1>Цифровий Банк для <span class="accent-color">Сучасного Життя</span></h1>
         <p class="lead">Керуйте своїми фінансами за допомогою інноваційного мобільного додатку, отримуйте високий кешбек та найкращі ставки по депозитах.</p>
         <button class="btn btn-primary btn-cta" data-modal-target="registration">Стати Клієнтом</button>
-
         <div class="features-bar">
             {% for feature in content.features %}
             <span><i class="fas fa-check-circle"></i> {{ feature }}</span>
             {% endfor %}
         </div>
     </section>
-
     <section id="products">
         <h2 class="section-title">Наші Інноваційні Продукти</h2>
         <p class="section-subtitle">Ми пропонуємо повний спектр фінансових послуг, адаптованих до ваших потреб.</p>
-
         <div class="grid-container">
             {% for service in content.services %}
             <div class="card-item product-card">
@@ -61,13 +52,10 @@
             {% endfor %}
         </div>
     </section>
-
     <hr class="section-divider">
-
     <section id="advantages">
         <h2 class="section-title">Наші Ключові Переваги</h2>
         <p class="section-subtitle">Наша мета — максимальна прозорість та безпека ваших заощаджень.</p>
-
         <div class="grid-container">
             {% for advantage in content.why_us %}
             <div class="card-item advantage-card">
@@ -78,9 +66,7 @@
             {% endfor %}
         </div>
     </section>
-
     <hr class="section-divider">
-
     <section id="stats">
         <h2 class="section-title">Nexus Bank у Цифрах</h2>
         <p class="section-subtitle">Довіра мільйонів клієнтів та стабільний ріст є нашим пріоритетом.</p>
@@ -93,13 +79,10 @@
             {% endfor %}
         </div>
     </section>
-
     <hr class="section-divider">
-
     <section id="reviews">
         <h2 class="section-title">Що Говорять Клієнти?</h2>
         <p class="section-subtitle">Нам довіряють — і це наша найкраща нагорода.</p>
-
         <div class="review-carousel-container">
             <div class="review-carousel">
                 {% for review in content.reviews %}
@@ -116,13 +99,10 @@
             </div>
         </div>
     </section>
-
     <hr class="section-divider">
-
     <section id="faq">
         <h2 class="section-title">Часті Питання (FAQ)</h2>
         <p class="section-subtitle">Знайдіть відповіді на найпоширеніші запитання про наші послуги.</p>
-
         <div class="faq-container">
             {% for item in content.faq %}
             <div class="faq-item">
@@ -137,13 +117,10 @@
             {% endfor %}
         </div>
     </section>
-
     <hr class="section-divider">
-
     <section id="team">
         <h2 class="section-title">Керівництво та Команда</h2>
         <p class="section-subtitle">Команда фахівців з досвідом роботи у провідних світових R&D центрах.</p>
-
         <div class="grid-container team-grid">
             {% for member in content.team %}
             <div class="card-item team-card">
@@ -153,7 +130,6 @@
             {% endfor %}
         </div>
     </section>
-
     <section id="contact">
         <h2 class="section-title">Зв'яжіться з Нами</h2>
         <p class="section-subtitle">Ми завжди готові надати вам консультацію та підтримку.</p>
@@ -163,7 +139,6 @@
             <p><i class="fas fa-map-marker-alt accent-color"></i> Адреса: {{ content.contact_info.address }}</p>
         </div>
     </section>
-
     <footer>
         <p>&copy; 2024 Nexus Bank. Всі права захищені. | {{ content.contact_info.email }}</p>
         <div class="social-links">
@@ -172,31 +147,26 @@
             {% endfor %}
         </div>
     </footer>
-
     <div id="modal-registration" class="modal-overlay">
         <div class="modal">
             <span class="close-btn" data-modal-close>&times;</span>
             <h2>Відкрити Рахунок</h2>
             <form id="registrationForm">
                 <p id="selected-ticket-name" class="ticket-info">Обрано: Стандартний Рахунок</p>
-
                 <div class="input-group">
                     <label for="regName">Ім'я та Прізвище</label>
                     <input type="text" id="regName" name="name" required>
                 </div>
-
                 <div class="input-group">
                     <label for="regEmail">Email</label>
                     <input type="email" id="regEmail" name="email" required>
                 </div>
-
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Надіслати Заявку</button>
                 <div class="loader" id="loader-reg"></div>
                 <div class="status-msg" id="status-reg"></div>
             </form>
         </div>
     </div>
-
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
