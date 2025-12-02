@@ -1,9 +1,8 @@
-/* --- ГЛОБАЛЬНІ ЗМІННІ та BASE --- */
 :root {
-    --primary-color: #007bff; /* Основний акцент (Синій) */
+    --primary-color: #007bff; 
     --accent-color: #007bff;
     --secondary-color: #6c757d;
-    --background-dark: #f8f9fa; /* Світлий фон */
+    --background-dark: #f8f9fa; 
     --background-light: #ffffff;
     --text-dark: #212529;
     --text-light: #f8f9fa;
@@ -11,28 +10,23 @@
     --radius: 8px;
     --transition-speed: 0.3s;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
 body {
     background-color: var(--background-light);
     color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
 }
-
 section {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* --- ТИТУЛЬНІ ЕЛЕМЕНТИ --- */
 .section-title {
     font-size: 2.5rem;
     font-weight: 800;
@@ -40,19 +34,15 @@ section {
     margin-bottom: 15px;
     color: var(--text-dark);
 }
-
 .section-subtitle {
     font-size: 1.1rem;
     color: var(--secondary-color);
     text-align: center;
     margin-bottom: 50px;
 }
-
 .accent-color {
     color: var(--accent-color);
 }
-
-/* --- HEADER та НАВІГАЦІЯ --- */
 header {
     position: sticky;
     top: 0;
@@ -65,12 +55,10 @@ header {
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
-
 .logo {
     font-size: 1.6rem;
     font-weight: 900;
 }
-
 header nav a {
     color: var(--text-dark);
     text-decoration: none;
@@ -78,12 +66,9 @@ header nav a {
     font-weight: 500;
     transition: color var(--transition-speed);
 }
-
 header nav a:hover {
     color: var(--accent-color);
 }
-
-/* --- КНОПКИ --- */
 .btn {
     border: none;
     padding: 12px 25px;
@@ -93,18 +78,14 @@ header nav a:hover {
     font-size: 1rem;
     transition: all var(--transition-speed);
 }
-
 .btn-primary {
     background: var(--primary-color);
     color: var(--text-light);
 }
-
 .btn-primary:hover {
     background: #0056b3;
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
-
-/* --- HERO SECTION --- */
 .video-background {
     position: absolute;
     top: 0;
@@ -114,14 +95,12 @@ header nav a:hover {
     z-index: -1;
     overflow: hidden;
 }
-
 #heroVideo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6); /* Затемнення відео */
+    filter: brightness(0.6); 
 }
-
 .hero {
     position: relative;
     color: var(--text-light);
@@ -133,14 +112,12 @@ header nav a:hover {
     align-items: center;
     z-index: 1;
 }
-
 .hero-date {
     font-size: 0.9rem;
     letter-spacing: 2px;
     margin-bottom: 15px;
     color: var(--accent-color);
 }
-
 .hero h1 {
     font-size: 3.8rem;
     font-weight: 900;
@@ -148,18 +125,15 @@ header nav a:hover {
     max-width: 800px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-
 .lead {
     font-size: 1.3rem;
     margin-bottom: 40px;
     max-width: 600px;
 }
-
 .btn-cta {
     padding: 14px 40px;
     font-size: 1.1rem;
 }
-
 .features-bar {
     position: absolute;
     bottom: 0;
@@ -172,26 +146,21 @@ header nav a:hover {
     flex-wrap: wrap;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .features-bar span {
     color: var(--text-light);
     font-weight: 500;
     margin: 5px 15px;
 }
-
 .features-bar .fas {
     color: var(--accent-color);
     margin-right: 8px;
 }
-
-/* --- КАРТКИ (Продукти, Переваги) --- */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
-
 .card-item {
     background: var(--background-light);
     padding: 30px;
@@ -201,29 +170,23 @@ header nav a:hover {
     text-align: center;
     border: 1px solid var(--border-color);
 }
-
 .card-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
-
 .large-icon {
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 15px;
 }
-
 .card-title {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
-
 .card-desc, .card-text {
     color: var(--secondary-color);
 }
-
-/* --- STATS SECTION --- */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -231,42 +194,35 @@ header nav a:hover {
     text-align: center;
     margin-top: 40px;
 }
-
 .stat-item {
     padding: 20px;
     background: var(--background-light);
     border-radius: var(--radius);
     border: 1px solid var(--border-color);
 }
-
 .stat-value {
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
-
 .stat-label {
     font-size: 0.9rem;
     color: var(--secondary-color);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-/* --- REVIEWS SECTION --- */
 .review-carousel-container {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
 }
-
 .review-carousel {
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 20px;
 }
-
 .review-card {
     flex: 0 0 100%;
     padding: 30px;
@@ -276,24 +232,20 @@ header nav a:hover {
     border-left: 3px solid var(--accent-color);
     min-height: 200px;
 }
-
 .quote-icon {
     font-size: 1.5rem;
     color: var(--accent-color);
     margin-bottom: 15px;
 }
-
 .review-text {
     font-style: italic;
     margin-bottom: 20px;
 }
-
 .review-author {
     font-weight: 600;
     text-align: right;
     color: var(--primary-color);
 }
-
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -301,9 +253,8 @@ header nav a:hover {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    pointer-events: none; /* Дозволяє клікати через кнопки, якщо вони прозорі */
+    pointer-events: none; 
 }
-
 .carousel-nav button {
     background: rgba(0, 0, 0, 0.6);
     color: var(--text-light);
@@ -315,23 +266,18 @@ header nav a:hover {
     z-index: 10;
     pointer-events: all;
 }
-
 .carousel-nav button:hover {
     background: var(--primary-color);
 }
-
-/* --- FAQ SECTION (Accordion) --- */
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
 }
-
 .faq-item {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 10px;
 }
-
 .faq-question {
     width: 100%;
     background: none;
@@ -347,62 +293,47 @@ header nav a:hover {
     align-items: center;
     transition: color var(--transition-speed);
 }
-
 .faq-question:hover {
     color: var(--accent-color);
 }
-
 .toggle-icon {
     transition: transform var(--transition-speed);
 }
-
 .faq-item.active .toggle-icon {
     transform: rotate(180deg);
 }
-
 .faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
     padding: 0 0 0 15px;
 }
-
 .faq-answer p {
     padding-bottom: 15px;
     color: var(--secondary-color);
 }
-
-/* --- TEAM SECTION --- */
 .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-
 .team-card {
     text-align: center;
 }
-
 .card-role {
     font-size: 0.9rem;
     color: var(--accent-color);
 }
-
-/* --- CONTACT SECTION --- */
 .contact-info {
     text-align: center;
     margin-top: 40px;
 }
-
 .contact-info p {
     font-size: 1.1rem;
     margin: 10px 0;
     color: var(--text-dark);
 }
-
 .contact-info i {
     margin-right: 10px;
 }
-
-/* --- FOOTER --- */
 footer {
     background-color: var(--text-dark);
     color: var(--text-light);
@@ -412,19 +343,15 @@ footer {
     align-items: center;
     font-size: 0.9rem;
 }
-
 .social-links a {
     color: var(--text-light);
     font-size: 1.2rem;
     margin-left: 20px;
     transition: color var(--transition-speed);
 }
-
 .social-links a:hover {
     color: var(--primary-color);
 }
-
-/* --- MODAL (Спливаюче вікно) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -437,7 +364,6 @@ footer {
     align-items: center;
     z-index: 2000;
 }
-
 .modal {
     background: var(--background-light);
     padding: 30px;
@@ -448,13 +374,11 @@ footer {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
     text-align: left;
 }
-
 .modal h2 {
     text-align: center;
     color: var(--accent-color);
     margin-bottom: 25px;
 }
-
 .close-btn {
     position: absolute;
     top: 15px;
@@ -463,26 +387,21 @@ footer {
     cursor: pointer;
     color: var(--secondary-color);
 }
-
 .close-btn:hover {
     color: var(--text-dark);
 }
-
 .modal form {
     display: flex;
     flex-direction: column;
 }
-
 .input-group {
     margin-bottom: 15px;
 }
-
 .input-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
 }
-
 .modal input[type="text"],
 .modal input[type="email"] {
     width: 100%;
@@ -492,19 +411,16 @@ footer {
     background: var(--background-dark);
     transition: border-color var(--transition-speed);
 }
-
 .modal input:focus {
     border-color: var(--primary-color);
     outline: none;
 }
-
 .ticket-info {
     text-align: center;
     margin-bottom: 20px;
     font-weight: 600;
     color: var(--accent-color);
 }
-
 .loader {
     border: 4px solid #f3f3f3;
     border-top: 4px solid var(--primary-color);
@@ -515,26 +431,22 @@ footer {
     margin: 15px auto;
     display: none;
 }
-
 .status-msg {
     text-align: center;
     margin-top: 15px;
     font-weight: 600;
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
         flex-wrap: wrap;
     }
     header nav {
-        display: none; /* Приховуємо навігацію на мобільних, щоб не ускладнювати */
+        display: none; 
     }
     .hero h1 {
         font-size: 2.5rem;
